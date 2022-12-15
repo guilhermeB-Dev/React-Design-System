@@ -16,5 +16,12 @@ module.exports = {
   },
   docs: {
     docsPage: "automatic"
-  }
+  },
+  /* If orgazination do this */
+  /* viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = '/React-Design-System/'
+    }
+    return config
+  } */
 };
