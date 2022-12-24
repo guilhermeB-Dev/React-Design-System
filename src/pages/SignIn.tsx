@@ -1,17 +1,23 @@
 import { TextInput } from '../components/TextInput';
 import { Checkbox } from '../components/Checkbox';
 import { Envelope, Lock } from 'phosphor-react';
+import { LogoReact } from '../styles/LogoReact';
 import { Heading } from '../components/Heading';
 import { Button } from '../components/Button';
 import { FormEvent, useState } from 'react';
 import { Text } from '../components/Text';
-import { Logo } from '../styles/Logo';
+import axios from 'axios';
 
 export function SignIn() {
   const [isUserSignedIn, setIsUserSignedIn] = useState(false);
 
 	function handleSignIn(event: FormEvent) {
     event.preventDefault();
+
+		axios.post('/login', {
+			email: 'guilherme.2203@hotmail.com',
+			password: 'Lindão'
+		})
 
     setIsUserSignedIn(true);
   }
@@ -20,7 +26,7 @@ export function SignIn() {
 		<div className='w-screen h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100'>
 
 			<header className='flex flex-col items-center'>
-				<Logo/>
+				<LogoReact/>
 
 				<Heading size='lg' className='mt-4 '>
 					Ignite Lab
